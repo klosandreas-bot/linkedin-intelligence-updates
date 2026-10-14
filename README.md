@@ -1,23 +1,21 @@
 # LinkedIn Intelligence – signierte Updates
 
-Dieses öffentliche Repository stellt signierte Updates für das lokal ausgeführte LinkedIn Intelligence Dashboard bereit. Die Software ist unabhängig entwickelt und wird nicht von LinkedIn herausgegeben oder unterstützt.
+Öffentlicher Updatekanal des lokal ausgeführten LinkedIn Intelligence Dashboards. Die Software ist unabhängig von LinkedIn entwickelt und wird nicht von LinkedIn herausgegeben oder unterstützt.
 
-## Aktuelle Version: 2.5.0
+## Aktuell: Version 2.6.0
 
-- [Programmarchiv V2.5.0](./LinkedIn-Intelligence-V2.5.0.zip)
+- [LinkedIn Intelligence V2.6.0](./LinkedIn-Intelligence-V2.6.0.zip)
 - [Signiertes Versionsmanifest](./latest.json)
 - [Digitale Release-Signatur](./latest.sig)
 
-**V2.5** ergänzt den fachgebietsbezogenen Credibility-Maßnahmenplan. Jede der fünf Dimensionen wird im eigenen Score-Thema analysiert. Zeitlich neuere Kenntnisbestätigungen können bei einem späteren Datenexport als Beobachtungsfall überprüft werden. Die empfohlenen Profilmaßnahmen sind keine garantierten Ursachen für höhere LinkedIn-Scores.
+**Neu in V2.6:** Profilbewusste Credibility-Empfehlungen statt mechanischer Score-Jagd. Ein niedriger Score löst nicht automatisch eine Profiländerung aus. Die Auswertung unterscheidet konkrete Prüfpunkte, Beobachtung, fehlende Exportdaten und keinen belegbaren Handlungsbedarf. Sie stellt zeitliche Score-Änderungen dar, ohne daraus Kausalität abzuleiten. Zusätzliche alte Seminare, Zertifikate oder Bestätigungen allein zur Score-Optimierung werden nicht empfohlen.
 
-Ab V2.4 prüft `Start-Dashboard.bat` automatisch auf Updates. Der lokale Updater validiert die RSA-SHA256-Signatur und die SHA-256-Prüfsumme des Archivs und ersetzt ausschließlich freigegebene Programmdateien. Offline startet die installierte Fassung weiter.
+Ab V2.4 prüft `Start-Dashboard.bat` automatisch auf signierte Updates. Eine fehlende Internetverbindung verhindert den lokalen Start nicht. Die Installation verändert keine persönliche Datenbank, LinkedIn-Exporte, Berichte, Nachrichten oder OAuth-Zugangsdaten.
 
-## Datenschutz und verantwortlicher Einsatz
+## Datenschutz und Sicherheit
 
-Das Repository enthält keine Nutzerdaten, SQLite-Datenbanken, LinkedIn-Exporte, Tokens, Client Secrets oder private Signaturschlüssel. Jeder Anwender arbeitet mit seinem eigenen ZIP-Export und gegebenenfalls seiner eigenen API-Autorisierung. Die über GitHub öffentlich heruntergeladenen Programmdateien sind lesbar.
+Dieses Repository enthält **keine privaten Nutzerdaten, Zugangstoken, Client Secrets, SQLite-Datenbanken oder privaten Signaturschlüssel**. Jeder Anwender importiert eigene LinkedIn-Daten und betreibt gegebenenfalls eine eigene Entwickleranwendung. Der verteilte Python-Quellcode ist öffentlich lesbar.
 
-## Release-Sicherheit
+Der private Signaturschlüssel darf niemals hochgeladen oder veröffentlicht werden. `latest.json` und `latest.sig` müssen zur Archiv-Prüfsumme passen. Änderungen an veröffentlichten Releases nur kontrolliert und signiert durchführen.
 
-Der private Release-Schlüssel darf nicht ins Repository, auch nicht in dessen Historie. `latest.json` und `latest.sig` müssen dieselben exakt signierten Bytes repräsentieren; das freigegebene Archiv muss zum hinterlegten SHA-256 passen. Bei einer Schlüsselkompromittierung ist ein kontrollierter Schlüsselwechsel erforderlich.
-
-Die Scores aus LinkedIn-Exporten sind keine bestätigten Feed-Rankingfaktoren. Aus Veränderungen kann ohne zusätzliche Informationen keine Kausalität abgeleitet werden.
+Die historischen Scores aus dem Datenexport sind keine nachgewiesenen LinkedIn-Feed-Rankingfaktoren. Aus der zeitlichen Überschneidung von Aktivitäten und Score-Änderungen kann keine Ursache abgeleitet werden.
