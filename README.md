@@ -1,22 +1,23 @@
 # LinkedIn Intelligence – signierte Updates
 
-Dieses öffentliche Repository stellt geprüfte Updates für das lokal ausgeführte LinkedIn Intelligence Dashboard bereit. Das Dashboard wurde unabhängig entwickelt und ist nicht von LinkedIn autorisiert oder unterstützt.
+Dieses öffentliche Repository stellt signierte Updates für das lokal ausgeführte LinkedIn Intelligence Dashboard bereit. Die Software ist unabhängig entwickelt und wird nicht von LinkedIn herausgegeben oder unterstützt.
 
-## Aktuelle Version
-- Version: **2.4.0**
-- Programmarchiv: `LinkedIn-Intelligence-V2.4.0.zip`
-- Signiertes Manifest: `latest.json`
-- RSA-SHA256-Signatur: `latest.sig`
+## Aktuelle Version: 2.5.0
 
-Ab V2.4 prüft `Start-Dashboard.bat` beim Start auf Updates. Das lokal installierte `updater.py` prüft die Signatur des Manifests und die SHA-256-Prüfsumme des Archivs, bevor freigegebene Programmdateien ersetzt werden. Ohne Internet läuft die lokale Software weiter. Automatische Updates lassen sich mit der Umgebungsvariablen `LINKEDIN_AUTO_UPDATE=0` deaktivieren.
+- [Programmarchiv V2.5.0](./LinkedIn-Intelligence-V2.5.0.zip)
+- [Signiertes Versionsmanifest](./latest.json)
+- [Digitale Release-Signatur](./latest.sig)
 
-## Datenschutz
-Dieses Repository enthält **keine persönlichen LinkedIn-Daten, Zugangstoken, Client Secrets, SQLite-Datenbanken oder privaten Signaturschlüssel**. Jeder Anwender verwaltet seinen eigenen LinkedIn-Datenexport und gegebenenfalls seine eigene LinkedIn-Entwickleranwendung. Der vollständige ZIP-Export kann ohne API-Zugang importiert werden.
+**V2.5** ergänzt den fachgebietsbezogenen Credibility-Maßnahmenplan. Jede der fünf Dimensionen wird im eigenen Score-Thema analysiert. Zeitlich neuere Kenntnisbestätigungen können bei einem späteren Datenexport als Beobachtungsfall überprüft werden. Die empfohlenen Profilmaßnahmen sind keine garantierten Ursachen für höhere LinkedIn-Scores.
 
-## Sicherheitsregeln für Releases
-- Ausschließlich signierte und geprüfte Veröffentlichungen publizieren.
-- Den privaten Signaturschlüssel niemals committen oder teilen.
-- `latest.json` erst zusammen mit passendem `latest.sig` und vorhandenem Archiv bereitstellen.
-- Bei vermutetem Schlüsselverlust oder -diebstahl die Auslieferung stoppen und einen kontrollierten Schlüsselwechsel vorbereiten.
+Ab V2.4 prüft `Start-Dashboard.bat` automatisch auf Updates. Der lokale Updater validiert die RSA-SHA256-Signatur und die SHA-256-Prüfsumme des Archivs und ersetzt ausschließlich freigegebene Programmdateien. Offline startet die installierte Fassung weiter.
 
-Hinweis: Das GitHub-Repository ist ein öffentlicher Updatekanal, kein Speicher für Nutzerdaten. Der Quellcode im ausgelieferten ZIP ist öffentlich einsehbar.
+## Datenschutz und verantwortlicher Einsatz
+
+Das Repository enthält keine Nutzerdaten, SQLite-Datenbanken, LinkedIn-Exporte, Tokens, Client Secrets oder private Signaturschlüssel. Jeder Anwender arbeitet mit seinem eigenen ZIP-Export und gegebenenfalls seiner eigenen API-Autorisierung. Die über GitHub öffentlich heruntergeladenen Programmdateien sind lesbar.
+
+## Release-Sicherheit
+
+Der private Release-Schlüssel darf nicht ins Repository, auch nicht in dessen Historie. `latest.json` und `latest.sig` müssen dieselben exakt signierten Bytes repräsentieren; das freigegebene Archiv muss zum hinterlegten SHA-256 passen. Bei einer Schlüsselkompromittierung ist ein kontrollierter Schlüsselwechsel erforderlich.
+
+Die Scores aus LinkedIn-Exporten sind keine bestätigten Feed-Rankingfaktoren. Aus Veränderungen kann ohne zusätzliche Informationen keine Kausalität abgeleitet werden.

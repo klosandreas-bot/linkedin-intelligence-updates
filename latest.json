@@ -1,7 +1,7 @@
 {
-  "version": "2.4.0",
-  "archive": "LinkedIn-Intelligence-V2.4.0.zip",
-  "sha256": "6dbfd113321ea583b0b6a3d30c4384da99feee8d771793cf8f0942cae62ba573",
+  "version": "2.5.0",
+  "archive": "LinkedIn-Intelligence-V2.5.0.zip",
+  "sha256": "8328c6e3af0f5a62031458b114efaf6d2315f8bdcd56b8f5b54c3767bc83e6e8",
   "files": [
     "advisory.py",
     "analytics.py",
