@@ -1,21 +1,21 @@
 # LinkedIn Intelligence – signierte Updates
 
-Öffentlicher Updatekanal des lokal ausgeführten LinkedIn Intelligence Dashboards. Die Software ist unabhängig von LinkedIn entwickelt und wird nicht von LinkedIn herausgegeben oder unterstützt.
+Öffentlicher Updatekanal des lokal ausgeführten LinkedIn Intelligence Dashboards. Die Anwendung wurde unabhängig entwickelt und ist kein offizielles Produkt von LinkedIn.
 
-## Aktuell: Version 2.6.0
+## Aktuelle Version 2.7.0
 
-- [LinkedIn Intelligence V2.6.0](./LinkedIn-Intelligence-V2.6.0.zip)
+- [Programmarchiv V2.7.0](./LinkedIn-Intelligence-V2.7.0.zip)
 - [Signiertes Versionsmanifest](./latest.json)
-- [Digitale Release-Signatur](./latest.sig)
+- [Release-Signatur](./latest.sig)
 
-**Neu in V2.6:** Profilbewusste Credibility-Empfehlungen statt mechanischer Score-Jagd. Ein niedriger Score löst nicht automatisch eine Profiländerung aus. Die Auswertung unterscheidet konkrete Prüfpunkte, Beobachtung, fehlende Exportdaten und keinen belegbaren Handlungsbedarf. Sie stellt zeitliche Score-Änderungen dar, ohne daraus Kausalität abzuleiten. Zusätzliche alte Seminare, Zertifikate oder Bestätigungen allein zur Score-Optimierung werden nicht empfohlen.
+**Neu in V2.7:** Die Versionsangabe wird dynamisch aus der installierten `version.json` geladen. Bei Kennzahlen werden exakt identische Datensätze nur einmal gezählt, während die unbearbeiteten Originaldaten erhalten bleiben. Im Bereich „Datenquellen & Abruf“ zeigt das Dashboard den letzten gespeicherten Datenstand je Bereich samt Quelle und Dubletten sowie separat den letzten API-Prüfstatus. Zeiten werden im Browser in deutscher Ortszeit (MEZ/MESZ) angezeigt. Der Bericht heißt „Bericht für KI Auswertung / GitHub“.
 
-Ab V2.4 prüft `Start-Dashboard.bat` automatisch auf signierte Updates. Eine fehlende Internetverbindung verhindert den lokalen Start nicht. Die Installation verändert keine persönliche Datenbank, LinkedIn-Exporte, Berichte, Nachrichten oder OAuth-Zugangsdaten.
+Ab V2.4 prüft `Start-Dashboard.bat` bei jedem Start auf Updates. Der lokale Updater validiert die RSA-SHA256-Signatur, prüft die SHA-256-Summe des Archivs und ersetzt nur freigegebene Programmdateien. Bei fehlender Internetverbindung startet die installierte Version weiter.
 
 ## Datenschutz und Sicherheit
 
-Dieses Repository enthält **keine privaten Nutzerdaten, Zugangstoken, Client Secrets, SQLite-Datenbanken oder privaten Signaturschlüssel**. Jeder Anwender importiert eigene LinkedIn-Daten und betreibt gegebenenfalls eine eigene Entwickleranwendung. Der verteilte Python-Quellcode ist öffentlich lesbar.
+Dieses öffentliche Repository enthält **keine persönlichen LinkedIn-Daten, SQLite-Datenbanken, Exporte, Nachrichten, Zugangstoken, Client Secrets oder privaten Signaturschlüssel**. Jeder Nutzer verwendet eigene Exporte beziehungsweise seine eigene LinkedIn-API-Autorisierung.
 
-Der private Signaturschlüssel darf niemals hochgeladen oder veröffentlicht werden. `latest.json` und `latest.sig` müssen zur Archiv-Prüfsumme passen. Änderungen an veröffentlichten Releases nur kontrolliert und signiert durchführen.
+Auch ein niedriger Credibility-Score ist keine Aufforderung zu unnötigen Profileinträgen. Die internen LinkedIn-Scores sind keine nachgewiesenen Feed-Rankingfaktoren. Unveränderte Rohdaten bleiben lokal; bereinigte Zählungen sind methodisch gekennzeichnet.
 
-Die historischen Scores aus dem Datenexport sind keine nachgewiesenen LinkedIn-Feed-Rankingfaktoren. Aus der zeitlichen Überschneidung von Aktivitäten und Score-Änderungen kann keine Ursache abgeleitet werden.
+Den privaten Signaturschlüssel niemals committen, auch nicht in private Repositories. Eine Kompromittierung erfordert einen kontrollierten Schlüsselwechsel.
