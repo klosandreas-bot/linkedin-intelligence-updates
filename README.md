@@ -1,29 +1,29 @@
 # LinkedIn Intelligence – signierte Updates
 
-Öffentlicher Updatekanal des lokal ausgeführten LinkedIn Intelligence Dashboards. Die Software ist unabhängig von LinkedIn entwickelt.
+Öffentlicher Updatekanal für das lokal ausgeführte LinkedIn Intelligence Dashboard. Die Software ist unabhängig von LinkedIn entwickelt und wird nicht von LinkedIn herausgegeben.
 
-## Aktuelle Version: 2.8.0
+## Aktuelle Version: 2.9.0
 
-- [Programmarchiv V2.8.0](./LinkedIn-Intelligence-V2.8.0.zip)
+- [Programmarchiv V2.9.0](./LinkedIn-Intelligence-V2.9.0.zip)
 - [Signiertes Versionsmanifest](./latest.json)
-- [Digitale Release-Signatur](./latest.sig)
+- [Release-Signatur](./latest.sig)
 
-### Neu in V2.8: Reichweite & Diskussion
+### V2.9 – Firmenstatistiken, API-Status und Dubletten
 
-- Neue lokale Ansicht „Reichweite & Diskussion“
-- Import von LinkedIn-Einzelbeitragsstatistiken als XLSX ohne zusätzliche Python-Abhängigkeiten
-- Manuelle Messstände für Privatprofil und Unternehmensseite samt tatsächlichem Messzeitpunkt
-- Verlaufsvergleich von Impressionen, Kommentaren und Interaktionen für denselben Beitrag
-- Fachlich substanzielle Kommentare und neue Diskussionsteilnehmer werden nur berücksichtigt, wenn der Nutzer sie ausdrücklich dokumentiert
-- Keine pauschale Abwertung von Kommentaren aus dem Bekanntenkreis und keine unbelegten Behauptungen über Algorithmus-Sanktionen
-- Erklärung der Datenlücke: persönliche Portabilitätsdaten enthalten überwiegend selbst verfasste Kommentare, nicht zuverlässig eingehende Diskussionen
+**Unternehmensseite:** Neues eigenständiges Dashboard für LinkedIn-Seitenanalysen. XLS (altes Excel-/BIFF8-Format), XLSX und CSV der Bereiche Inhalte/Beiträge, Follower und Besucher werden lokal eingelesen. Erkannte tägliche Kennzahlen und beitragsbezogene Daten erscheinen getrennt vom Privatprofil. Wiederholte Dateiuploads werden nicht doppelt gezählt; überlappende Zeiträume werden pro Messdatum/Kennzahl anhand des neueren Exports zusammengeführt. Unbekannte Blätter werden ausdrücklich gemeldet, nicht erraten. Demografische Blätter ohne Datum werden derzeit nicht als zeitliche Kennzahlen importiert.
 
-### Softwareupdates
+**API-Prüfstatus:** Korrekter letzter Prüflauf und Einzelstatus pro Datenbereich im lokalen Dashboard. Erfolgreicher Import ist von späterer leerer/fehlgeschlagener API-Prüfung unterscheidbar.
 
-Ab V2.4 prüft `Start-Dashboard.bat` beim Start, ob ein neueres signiertes Update vorliegt. Der Updater prüft die RSA-SHA256-Signatur und die SHA-256-Prüfsumme des Archivs. Ohne Internet startet die lokale Version weiter. Alle Versionen einschließlich V2.7 bleiben zur nachvollziehbaren Historie erhalten.
+**Speicherung:** Exakt identische API-Ereignisse liegen für Auswertungen nur einmal vor. Vollständige Rohantworten mit allen wiederholten Zeilen werden weiterhin lokal in komprimierten, per SHA-256 überprüfbaren Archivdateien vorgehalten. Identische API-Seiten während der Paginierung werden als Fehler erkannt; ein unvollständiger Download überschreibt keinen früheren Datenstand.
 
-### Datenschutz und Sicherheit
+**Optionaler Altbestands-Fix:** Mit ausdrücklicher Zustimmung und vorheriger vollständiger SQLite-Sicherung können ältere API-Snapshots platzsparend archiviert werden. Historische Snapshots, Score-Werte, ZIP-Importe, Unternehmensdaten und Originale bleiben erhalten.
 
-Keine persönlichen LinkedIn-Daten, SQLite-Datenbanken, ZIP-Exporte, Nachrichten, Zugangstoken, Client Secrets oder private Signaturschlüssel in diesem öffentlichen Repository. Jeder Nutzer verwaltet seine eigene Autorisierung. Der verteilte Python-Quellcode ist öffentlich lesbar.
+### Automatische Updates
 
-Die neuen Messstände bleiben ausschließlich in der lokalen Datenbank und werden nicht in kuratierte Berichte oder nach GitHub übertragen. Der private Release-Signaturschlüssel darf niemals veröffentlicht werden. Weder Credibility-Scores noch Kommentarhäufigkeiten belegen eine bestimmte Wirkung auf den LinkedIn-Feed.
+Ab V2.4 prüft `Start-Dashboard.bat` bei jedem Start das signierte Manifest und aktualisiert bei Bedarf das Programm. Bei fehlender Verbindung startet die vorhandene lokale Version weiter. Die RSA-SHA256-Signatur und der SHA-256-Hash des Archivs werden geprüft. Alte Releases bleiben in diesem Repository erhalten.
+
+### Datenschutz
+
+Dieses öffentliche Repository enthält **keine persönlichen LinkedIn-Daten, SQLite-Datenbanken, Exporte, Berichte, Nachrichten, Tokens, Client Secrets oder privaten Signaturschlüssel**. Jeder Nutzer verwendet eigene Daten und bei Bedarf eine eigene LinkedIn-API-Autorisierung. Lokale Daten werden vom Softwareupdate nicht ersetzt; Firmenexporte werden nicht an GitHub übertragen.
+
+Die LinkedIn-internen Credibility-Scores sind keine nachgewiesenen Feed-Rankingfaktoren. Ein Zusammenhang zwischen Kommentaren, API-Abfragen oder Profiländerungen und der Beitragsverteilung kann aus den exportierten Daten nicht kausal abgeleitet werden.
