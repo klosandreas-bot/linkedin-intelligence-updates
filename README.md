@@ -1,21 +1,29 @@
 # LinkedIn Intelligence – signierte Updates
 
-Öffentlicher Updatekanal des lokal ausgeführten LinkedIn Intelligence Dashboards. Die Anwendung wurde unabhängig entwickelt und ist kein offizielles Produkt von LinkedIn.
+Öffentlicher Updatekanal des lokal ausgeführten LinkedIn Intelligence Dashboards. Die Software ist unabhängig von LinkedIn entwickelt.
 
-## Aktuelle Version 2.7.0
+## Aktuelle Version: 2.8.0
 
-- [Programmarchiv V2.7.0](./LinkedIn-Intelligence-V2.7.0.zip)
+- [Programmarchiv V2.8.0](./LinkedIn-Intelligence-V2.8.0.zip)
 - [Signiertes Versionsmanifest](./latest.json)
-- [Release-Signatur](./latest.sig)
+- [Digitale Release-Signatur](./latest.sig)
 
-**Neu in V2.7:** Die Versionsangabe wird dynamisch aus der installierten `version.json` geladen. Bei Kennzahlen werden exakt identische Datensätze nur einmal gezählt, während die unbearbeiteten Originaldaten erhalten bleiben. Im Bereich „Datenquellen & Abruf“ zeigt das Dashboard den letzten gespeicherten Datenstand je Bereich samt Quelle und Dubletten sowie separat den letzten API-Prüfstatus. Zeiten werden im Browser in deutscher Ortszeit (MEZ/MESZ) angezeigt. Der Bericht heißt „Bericht für KI Auswertung / GitHub“.
+### Neu in V2.8: Reichweite & Diskussion
 
-Ab V2.4 prüft `Start-Dashboard.bat` bei jedem Start auf Updates. Der lokale Updater validiert die RSA-SHA256-Signatur, prüft die SHA-256-Summe des Archivs und ersetzt nur freigegebene Programmdateien. Bei fehlender Internetverbindung startet die installierte Version weiter.
+- Neue lokale Ansicht „Reichweite & Diskussion“
+- Import von LinkedIn-Einzelbeitragsstatistiken als XLSX ohne zusätzliche Python-Abhängigkeiten
+- Manuelle Messstände für Privatprofil und Unternehmensseite samt tatsächlichem Messzeitpunkt
+- Verlaufsvergleich von Impressionen, Kommentaren und Interaktionen für denselben Beitrag
+- Fachlich substanzielle Kommentare und neue Diskussionsteilnehmer werden nur berücksichtigt, wenn der Nutzer sie ausdrücklich dokumentiert
+- Keine pauschale Abwertung von Kommentaren aus dem Bekanntenkreis und keine unbelegten Behauptungen über Algorithmus-Sanktionen
+- Erklärung der Datenlücke: persönliche Portabilitätsdaten enthalten überwiegend selbst verfasste Kommentare, nicht zuverlässig eingehende Diskussionen
 
-## Datenschutz und Sicherheit
+### Softwareupdates
 
-Dieses öffentliche Repository enthält **keine persönlichen LinkedIn-Daten, SQLite-Datenbanken, Exporte, Nachrichten, Zugangstoken, Client Secrets oder privaten Signaturschlüssel**. Jeder Nutzer verwendet eigene Exporte beziehungsweise seine eigene LinkedIn-API-Autorisierung.
+Ab V2.4 prüft `Start-Dashboard.bat` beim Start, ob ein neueres signiertes Update vorliegt. Der Updater prüft die RSA-SHA256-Signatur und die SHA-256-Prüfsumme des Archivs. Ohne Internet startet die lokale Version weiter. Alle Versionen einschließlich V2.7 bleiben zur nachvollziehbaren Historie erhalten.
 
-Auch ein niedriger Credibility-Score ist keine Aufforderung zu unnötigen Profileinträgen. Die internen LinkedIn-Scores sind keine nachgewiesenen Feed-Rankingfaktoren. Unveränderte Rohdaten bleiben lokal; bereinigte Zählungen sind methodisch gekennzeichnet.
+### Datenschutz und Sicherheit
 
-Den privaten Signaturschlüssel niemals committen, auch nicht in private Repositories. Eine Kompromittierung erfordert einen kontrollierten Schlüsselwechsel.
+Keine persönlichen LinkedIn-Daten, SQLite-Datenbanken, ZIP-Exporte, Nachrichten, Zugangstoken, Client Secrets oder private Signaturschlüssel in diesem öffentlichen Repository. Jeder Nutzer verwaltet seine eigene Autorisierung. Der verteilte Python-Quellcode ist öffentlich lesbar.
+
+Die neuen Messstände bleiben ausschließlich in der lokalen Datenbank und werden nicht in kuratierte Berichte oder nach GitHub übertragen. Der private Release-Signaturschlüssel darf niemals veröffentlicht werden. Weder Credibility-Scores noch Kommentarhäufigkeiten belegen eine bestimmte Wirkung auf den LinkedIn-Feed.
