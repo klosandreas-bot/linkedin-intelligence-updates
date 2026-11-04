@@ -1,0 +1,19 @@
+{
+  "version": "2.9.6",
+  "archive": "LinkedIn-Intelligence-V2.9.6.zip",
+  "sha256": "5e9f102090e815dae85147b4191dbc48703033de3c7a72ceb32dd884172b6f4b",
+  "files": [
+    "advisory.py",
+    "analytics.py",
+    "cli.py",
+    "ingest.py",
+    "linkedin_api.py",
+    "privacy/index.html",
+    "server.py",
+    "static/app.js",
+    "static/index.html",
+    "static/style.css",
+    "storage.py",
+    "updater.py"
+  ]
+}
