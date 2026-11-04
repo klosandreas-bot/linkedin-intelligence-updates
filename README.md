@@ -1,10 +1,16 @@
 # LinkedIn Intelligence – signierte Updates
 
-## Aktuelle Version: 2.9.5 (04.11.2026)
+## Aktuelle Version: 2.9.6 (04.11.2026)
 
-- [Programmarchiv V2.9.5](./LinkedIn-Intelligence-V2.9.5.zip)
+- [Programmarchiv V2.9.6](./LinkedIn-Intelligence-V2.9.6.zip)
 - [Signiertes Versionsmanifest](./latest.json)
 - [Release-Signatur](./latest.sig)
+
+### V2.9.6 – Reichweitenstatistiken und Auto-Update
+- Die persönlichen AggregateAnalytics-XLSX enthalten bis zu 50 TOP-Beiträge mit Impressionen; diese werden nun vollständig importiert und über LinkedIn-Beitragskennungen zugeordnet.
+- Mehrere offizielle XLSX-Dateien können gemeinsam importiert werden. Der wiederholte Import derselben Datei ergänzt frühere unvollständige Datensätze.
+- Der Extended Report zeigt die Messquelle und den Bezugszeitraum; Zuwächse werden nur zwischen vergleichbaren Exportfenstern berechnet.
+- Update wird über den bestehenden RSA-signierten Auto-Updater verteilt, ohne zusätzliche Programme oder Änderung persönlicher Daten.
 
 ### V2.9.5 – Erweiterter Beitragsbericht
 
