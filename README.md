@@ -1,12 +1,21 @@
 # LinkedIn Intelligence – signierte Updates
 
-Öffentlicher Updatekanal für das lokal ausgeführte LinkedIn Intelligence Dashboard. Die Software ist unabhängig von LinkedIn entwickelt und wird nicht von LinkedIn herausgegeben.
+## Aktuelle Version: 2.9.5 (04.11.2026)
 
-## Aktuelle Version: 2.9.1
-
-- [Programmarchiv V2.9.1](./LinkedIn-Intelligence-V2.9.1.zip)
+- [Programmarchiv V2.9.5](./LinkedIn-Intelligence-V2.9.5.zip)
 - [Signiertes Versionsmanifest](./latest.json)
 - [Release-Signatur](./latest.sig)
+
+### V2.9.5 – Erweiterter Beitragsbericht
+
+- Neuer optionaler **Extended Report** mit allen lokal verfügbaren eigenen LinkedIn-Beiträgen, Volltexten, Daten, Links und Datenherkunft.
+- Zuordnung verfügbarer Beitrags- und Wochenstatistiken; keine künstlich ergänzten Kennzahlen.
+- Lokale Vergleiche zwischen gespeicherten API-/ZIP-Snapshots und Anzeige neu erkannter Beiträge.
+- Textmerkmale für den Vergleich von Beitragslänge, Themen und Unicode-Formatierung.
+- Der bisherige datensparsame Report bleibt Standard. Keine personenbezogenen Daten, Tokens oder Datenbanken im öffentlichen Repo.
+- Signiertes Update kompatibel zu V2.9.1–V2.9.4; alle Tests und die Archivvalidierung erfolgreich.
+
+Öffentlicher Updatekanal für das lokal ausgeführte LinkedIn Intelligence Dashboard. Die Software ist unabhängig von LinkedIn entwickelt und wird nicht von LinkedIn herausgegeben.
 
 ### V2.9.1 – Import der Original-Seitenanalyse korrigiert
 
